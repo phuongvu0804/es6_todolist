@@ -1,5 +1,6 @@
 const getEle = id => document.getElementById(id)
 
+const dateField = getEle('currentDate')
 const addBtn = getEle('addItem')
 let inputValue = ''
 const todoField = getEle('todo')
@@ -8,15 +9,24 @@ const completedField = getEle('completed')
 let todoArray = []
 let completedArray = []
 
+// Get current date
+let today = new Date()
+const dd = String(today.getDate()).padStart(2, '0')
+var mm = String(today.getMonth() + 1).padStart(2, '0');
+var yyyy = today.getFullYear()
+
+today = dd + '/' + mm + '/' + yyyy
+dateField.innerHTML = today
+
 const render = (array, field) => {
     let htmls = array.map(job => 
         `<li value=${job} class="task">
             ${job}
             <div>
-                <button class="list-btn" onclick="deleteTask(this)">
+                <button class="list-btn remove" onclick="deleteTask(this)">
                     <i class="far fa-trash-alt"></i>
                 </button>
-                <button class="list-btn" onclick="checkTask(this)">
+                <button class="list-btn complete" onclick="checkTask(this)">
                     <i class="far fa-check-circle"></i>
                 </button>
             </div>
@@ -25,6 +35,7 @@ const render = (array, field) => {
     
     field.innerHTML = htmls
 }
+
 
 const saveLocalStorage = (job, key) => {
     const JSONjob = JSON.stringify(job)
@@ -93,7 +104,6 @@ const deleteTask = (value) => {
         todoArray = todoArray.filter( task => task !== checkedTaskValue)
         saveLocalStorage(todoArray, 'todo')
     } else {
-        console.log('completedArray')
         completedArray = completedArray.filter( task => task !== checkedTaskValue)
         saveLocalStorage(completedArray, 'completed') 
     }
@@ -102,7 +112,6 @@ const deleteTask = (value) => {
     getEle(ulID).removeChild(checkedTask)
 }
 
-console.log(todoArray)
 //Organize A -> Z
 const filterA_Z = getEle('two')
 filterA_Z.onclick = () => {

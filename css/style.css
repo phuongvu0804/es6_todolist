@@ -15,7 +15,6 @@ body {
 .card {
   margin: 50px auto;
   background-color: #f5f8f9;
-  /* height: 430px; */
   width: 350px;
   box-shadow: 0 0 6px grey;
   overflow: hidden;
@@ -168,24 +167,19 @@ span.toggle-btn:hover{
 
 /* Add */
 .card__add{
-
-    /* background: #DE3963; */
-    display: flex;
+  display: flex;
   position: relative;
-  
   margin-top: 5px;
 }
+
 .card__add input {
   width: 100%;
     height: 40px;
-    /* float: left; */
     color: #fff;
     font-size: 15px;
     font-weight: 400;
     text-indent: 18px;
-    /* padding: 0 60px 0 0; */
     background: rgba(222, 57, 99, 0.6);
-    /* border-radius: 3px; */
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border: 0px;
@@ -205,8 +199,6 @@ span.toggle-btn:hover{
   position: absolute;
   top:0;
   right: 0;
-  /* width: 40px;
-  height: 40px; */
   box-shadow: 0 0 0 2px rgba(222, 57, 99);
   cursor: pointer;
   outline: none;
@@ -245,6 +237,7 @@ ul.todo li {
 ul.todo#todo{
   padding-top: 30px;
 }
+
 ul.todo#completed {
   position: relative;
   padding: 30px 0;
@@ -292,39 +285,15 @@ ul.todo li .buttons button {
   padding: 5px 0 5px 5px;
   font-size: 1rem;
 }
-ul.todo li .buttons .remove{
+
+ul.todo .list-btn.remove,
+ul.todo .list-btn.complete {
   color: #aaa;
 }
-ul.todo li .buttons .remove:hover{
+ul.todo .list-btn.remove:hover {
   color: #FA396B;
 }
 
-ul.todo li .buttons .complete{
-  color: #aaa;
-  
-}
-
-ul.todo li .buttons .complete:hover{
-  color: #25b99a;
-}
-
-ul.todo#todo li .buttons .complete .fas{
-  display: none;
-}
-
-ul.todo#todo li .buttons .complete .far{
-  display: block;
-}
-
-ul.todo#completed li .buttons .complete .fas{
-  display: block;
-  color: #25b99a;
-}
-
-ul.todo#completed li .buttons .complete .far{
-  display: none;
-}
-
-ul.todo#completed span{
+ul.todo .list-btn.complete:hover{
   color: #25b99a;
 }
