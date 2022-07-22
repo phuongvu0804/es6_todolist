@@ -275,7 +275,11 @@ ul.todo#completed:after {
   color: #aaa;
 }
 
-ul.todo li .buttons button {
+
+.list-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
   background: none;
   border: 0px;
   box-shadow: none;
@@ -285,6 +289,7 @@ ul.todo li .buttons button {
   padding: 5px 0 5px 5px;
   font-size: 1rem;
 }
+
 
 ul.todo .list-btn.remove,
 ul.todo .list-btn.complete {
@@ -296,4 +301,11 @@ ul.todo .list-btn.remove:hover {
 
 ul.todo .list-btn.complete:hover{
   color: #25b99a;
+}
+
+#completed .task,
+#completed button:nth-child(2) i,
+.task.checked {
+  color: #3cac95;
+
 }
